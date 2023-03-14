@@ -91,7 +91,7 @@ data_with_clusters = penguins_new.copy()
 data_with_clusters['Cluster'] = identified_clusters
 
 st.dataframe(data_with_clusters)
-fig3 = px.scatter(data_with_clusters,x='body_mass_g', y='flipper_length_mm',color='Cluster',color_discrete_map={1:'red',0:'blue'}
+fig3 = px.scatter(data_with_clusters,x='body_mass_g', y='flipper_length_mm',color='Cluster',color_discrete_map={'1':'red','0':'blue'},
                 ).update_xaxes(title='masa ciała [g]'
                 ).update_yaxes(title = 'długosc płetwy [mm]'
                 ).update_layout(title='Wykres rozrzutu',title_x=0.5,title_font_size=25)
