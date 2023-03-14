@@ -13,7 +13,7 @@ import plotly.graph_objects as go
 
 penguins = pd.read_csv('https://raw.githubusercontent.com/mwaskom/seaborn-data/master/penguins.csv')
 
-st.set_page_config(page_title='App', page_icon = "🧊", layout = 'wide')
+st.set_page_config(page_title='App', page_icon = "🧊", layout = 'centered')
 st.sidebar.header('Odfiltruj wybrane cechy:')
 species = st.sidebar.multiselect(
     'Gatunek',
@@ -90,7 +90,7 @@ identified_clusters = kmeans.fit_predict(X)
 data_with_clusters = penguins_new.copy()
 data_with_clusters['Cluster'] = identified_clusters
 
-st.dataframe(data_with_clusters)
+st.write(type(data_with_clusters['Cluster'].value))
 fig3 = px.scatter(data_with_clusters,x='body_mass_g', y='flipper_length_mm',color='Cluster',color_discrete_map={'1':'red','0':'blue'},
                 ).update_xaxes(title='masa ciała [g]'
                 ).update_yaxes(title = 'długosc płetwy [mm]'
