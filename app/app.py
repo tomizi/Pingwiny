@@ -64,7 +64,7 @@ fig = px.scatter(penguins_new,x='body_mass_g', y='flipper_length_mm',color='sex'
                 ).update_layout(title='Wykres rozrzutu',title_x=0.5,title_font_size=25,width=1000,height=800)
 st.plotly_chart(fig)
 results = px.get_trendline_results(fig)
-st.write(results.query("island == 'Biscoe' & species == 'Gentoo'").px_fit_results.iloc[0].summary())
+#st.write(results.query("island == 'Biscoe' & species == 'Gentoo'").px_fit_results.iloc[0].summary())
 
 
 X = penguins_new.iloc[:,4:5].values
