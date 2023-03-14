@@ -97,4 +97,4 @@ fig3 = px.scatter(data_with_clusters,x='body_mass_g', y='flipper_length_mm',colo
                 ).update_yaxes(title = 'długosc płetwy [mm]'
                 ).update_layout(title='Wykres rozrzutu',title_x=0.5,title_font_size=25)
 st.plotly_chart(fig3)
-st.write(fig3)
+st.write(print(fig3))
