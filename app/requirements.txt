@@ -3,3 +3,4 @@ pandas==1.4.2
 plotly==5.8.0
 scikit_learn==1.2.2
 streamlit==1.17.0
+statsmodels==0.13.2
