@@ -88,7 +88,7 @@ identified_clusters = kmeans.fit_predict(X)
 
 
 data_with_clusters = penguins_new.copy()
-data_with_clusters['Cluster'] = identified_clusters
+data_with_clusters['Cluster'] = list(map(lambda x: str(x),identified_clusters))
 
 
 fig3 = px.scatter(data_with_clusters,x='body_mass_g', y='flipper_length_mm',color='Cluster',
@@ -97,4 +97,4 @@ fig3 = px.scatter(data_with_clusters,x='body_mass_g', y='flipper_length_mm',colo
                 ).update_yaxes(title = 'długosc płetwy [mm]'
                 ).update_layout(title='Wykres rozrzutu',title_x=0.5,title_font_size=25)
 st.plotly_chart(fig3)
-st.write(print(fig3))
+
