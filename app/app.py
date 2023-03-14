@@ -91,7 +91,7 @@ data_with_clusters = penguins_new.copy()
 data_with_clusters['Cluster'] = list(map(lambda x: str(x),identified_clusters))
 
 
-fig3 = px.scatter(data_with_clusters,x='body_mass_g', y='flipper_length_mm',color='Cluster',
+fig3 = px.scatter(data_with_clusters,x='body_mass_g', y='flipper_length_mm',color='Cluster',color_discrete_sequence=['gold','magenta']
                 ).update_traces(
                 ).update_xaxes(title='masa ciała [g]'
                 ).update_yaxes(title = 'długosc płetwy [mm]'
