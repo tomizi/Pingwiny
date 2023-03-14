@@ -91,9 +91,10 @@ data_with_clusters = penguins_new.copy()
 data_with_clusters['Cluster'] = identified_clusters
 
 
-fig3 = px.scatter(data_with_clusters,x='body_mass_g', y='flipper_length_mm',color='Cluster',markers=True
-                ).update_traces(markers_color='red',
+fig3 = px.scatter(data_with_clusters,x='body_mass_g', y='flipper_length_mm',color='Cluster',
+                ).update_traces(
                 ).update_xaxes(title='masa ciała [g]'
                 ).update_yaxes(title = 'długosc płetwy [mm]'
                 ).update_layout(title='Wykres rozrzutu',title_x=0.5,title_font_size=25)
 st.plotly_chart(fig3)
+st.write(fig3)
