@@ -52,7 +52,7 @@ bill_length_mm = st.sidebar.slider(
     'Długosć dzioba w milimetrach',
     min_value = int(np.ceil(np.min(penguins['bill_length_mm']))),
     max_value = int(np.ceil(np.max(penguins['bill_length_mm']))),
-    value = int(np.ceil(np.max(penguins['bill_length_mm']))),
+    value = [int(np.ceil(np.max(penguins['bill_length_mm']))),int(np.ceil(np.max(penguins['bill_length_mm'])))],
     step = 1
     
     )
@@ -61,7 +61,7 @@ bill_depth_mm = st.sidebar.slider(
     'Głębokosć dzioba w milimetrach',
     min_value = int(np.ceil(np.min(penguins['bill_depth_mm']))),
     max_value = int(np.ceil(np.max(penguins['bill_depth_mm']))),
-    value = int(np.ceil(np.max(penguins['bill_depth_mm']))),
+    value = [int(np.ceil(np.max(penguins['bill_depth_mm']))),int(np.ceil(np.max(penguins['bill_depth_mm'])))],
     step = 1
     
     )
@@ -70,8 +70,8 @@ flipper_length_mm = st.sidebar.slider(
     'Długosć skrzydła w milimetrach',
     min_value = int(np.ceil(np.min(penguins['flipper_length_mm']))),
     max_value = int(np.ceil(np.max(penguins['flipper_length_mm']))),
-    value = int(np.ceil(np.max(penguins['flipper_length_mm']))),
-    step = 10
+    value = [int(np.ceil(np.max(penguins['flipper_length_mm']))),int(np.ceil(np.max(penguins['flipper_length_mm'])))],
+    step = 1
     
     )
 
