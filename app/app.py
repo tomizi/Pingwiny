@@ -20,6 +20,7 @@ penguins = pd.read_csv('https://raw.githubusercontent.com/mwaskom/seaborn-data/m
 
 st.set_page_config(page_title='Pingwiny', page_icon = im, layout = 'wide')
 st.sidebar.header('Odfiltruj wybrane cechy:')
+
 species = st.sidebar.multiselect(
     'Gatunek',
     options = penguins['species'].unique(),
@@ -78,7 +79,7 @@ flipper_length_mm = st.sidebar.slider(
 st.title('Analiza danych')
 st.markdown('---')
 st.subheader('Tabela z danymi o trzech gatunkach pingwina')
-penguins_new = penguins.query('species == @species & island == @island & sex == @sex & body_mass_g >= @masa_ciała[0] & body_mass_g <= @masa_ciała[1] & flipper_length_mm <= @flipper_length_mm & bill_depth_mm <= @bill_depth_mm & bill_length_mm <= @bill_length_mm')
+penguins_new = penguins.query('species == @species & island == @island & sex == @sex & body_mass_g >= @masa_ciała[0] & body_mass_g <= @masa_ciała[1] & flipper_length_mm >= @flipper_length_mm[0] & flipper_length_mm <= @flipper_length_mm[1] & bill_depth_mm >= @bill_depth_mm[0] & bill_depth_mm <= @bill_depth_mm[1] & bill_length_mm >= @bill_length_mm[0] & bill_length_mm <= @bill_length_mm[1]')
 st.write('[Link do zbiorów danych >](https://raw.githubusercontent.com/mwaskom/seaborn-data/master/penguins.csv)')
 if penguins_new.empty:
     st.info('Brak danych do wyswietlenia')
